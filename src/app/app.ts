@@ -8,9 +8,23 @@ class Hero {
 @Component({
 	selector: 'my-app',
 	styles: [`
-		.heroes {list-style-type: none; margin-left: 1em; padding: 0; width: 10em;}
-		.heroes li { cursor: pointer; position: relative; left: 0; transition: all 0.2s ease; }
-		.heroes li:hover {color: #369; background-color: #EEE; left: .2em;}
+		.heroes {
+			list-style-type: none;
+			margin-left: 1em;
+			padding: 0;
+			width: 10em;
+		}
+		.heroes li {
+			cursor: pointer;
+			position: relative;
+			left: 0;
+			transition: all 0.2s ease;
+		}
+		.heroes li:hover {
+			color: #369;
+			background-color: #EEE;
+			left: .2em;
+		}
 		.heroes .badge {
 			font-size: small;
 			color: white;
@@ -21,7 +35,10 @@ class Hero {
 			left: -1px;
 			top: -1px;
 		}
-		.selected { background-color: #EEE; color: #369; }
+		.selected {
+			background-color: #EEE;
+			color: #369;
+		}
 	`],
 	template: `
 		<h1>{{title}}</h1>
@@ -33,10 +50,14 @@ class Hero {
 		</ul>
 		<div *ng-if="selectedHero">
 			<h2>{{selectedHero.name}} details!</h2>
-			<div><label>id: </label>{{selectedHero.id}}</div>
+			<div>
+				<label>id: </label>{{selectedHero.id}}
+			</div>
 			<div>
 				<label>name: </label>
-				<div><input [(ng-model)]="selectedHero.name" placeholder="name"/></div>
+				<div>
+					<input [(ng-model)]="selectedHero.name" placeholder="name"/>
+				</div>
 			</div>
 		</div>
 		`,
@@ -52,21 +73,21 @@ class AppComponent {
 	}
 	
 	getSelectedClass(hero: Hero) {
-		return { 'selected': hero === this.selectedHero };
+		return {'selected': hero === this.selectedHero};
 	}
 }
 
 var HEROES: Hero[] = [
-	{ "id": 11, "name": "Mr. Nice" },
-	{ "id": 12, "name": "Narco" },
-	{ "id": 13, "name": "Bombasto" },
-	{ "id": 14, "name": "Celeritas" },
-	{ "id": 15, "name": "Magneta" },
-	{ "id": 16, "name": "RubberMan" },
-	{ "id": 17, "name": "Dynama" },
-	{ "id": 18, "name": "Dr IQ" },
-	{ "id": 19, "name": "Magma" },
-	{ "id": 20, "name": "Tornado" }
+	{"id": 11, "name": "Mr. Nice"},
+	{"id": 12, "name": "Narco"},
+	{"id": 13, "name": "Bombasto"},
+	{"id": 14, "name": "Celeritas"},
+	{"id": 15, "name": "Magneta"},
+	{"id": 16, "name": "RubberMan"},
+	{"id": 17, "name": "Dynama"},
+	{"id": 18, "name": "Dr IQ"},
+	{"id": 19, "name": "Magma"},
+	{"id": 20, "name": "Tornado"}
 ];
 
 bootstrap(AppComponent);
