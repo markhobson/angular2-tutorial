@@ -1,4 +1,4 @@
-import {bootstrap, Component} from 'angular2/angular2';
+import {bootstrap, Component, FORM_DIRECTIVES} from 'angular2/angular2';
 @Component({
     selector: 'my-app',
     template: `
@@ -7,9 +7,10 @@ import {bootstrap, Component} from 'angular2/angular2';
         <div><label>id: </label>{{hero.id}}</div>
         <div>
             <label>name: </label>
-            <div><input value="{{hero.name}}" placeholder="name"/></div>
+            <div><input [(ng-model)]="hero.name" placeholder="name"/></div>
         </div>
-        `
+        `,
+    directives: [FORM_DIRECTIVES]
 })
 class AppComponent {
     public title = 'Tour of Heroes';
