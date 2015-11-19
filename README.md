@@ -1,5 +1,5 @@
-angular2-tutorial
-=================
+Angular 2 Tutorial
+==================
 
 Following the [Angular 2 TypeScript tutorial](https://angular.io/docs/ts/latest/tutorial/).
 
